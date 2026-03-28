@@ -1,0 +1,545 @@
+:root {
+  color-scheme: light;
+  --bg: #fff8e8;
+  --bg-deep: #f1d682;
+  --surface: rgba(255, 251, 242, 0.84);
+  --surface-strong: #fffaf0;
+  --ink: #2f2412;
+  --muted: #6a5b3f;
+  --line: rgba(91, 67, 26, 0.14);
+  --banana: #f7cf3f;
+  --banana-deep: #efab1a;
+  --leaf: #3e7b3d;
+  --shadow: 0 22px 70px rgba(120, 87, 24, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 214, 72, 0.55), transparent 24%),
+    radial-gradient(circle at 90% 18%, rgba(122, 184, 84, 0.24), transparent 22%),
+    linear-gradient(180deg, #fffdf6 0%, #fff7df 52%, #f9efc9 100%);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-glow-left {
+  left: -120px;
+  top: 80px;
+  background: rgba(255, 211, 61, 0.45);
+}
+
+.page-glow-right {
+  right: -120px;
+  top: 320px;
+  background: rgba(132, 198, 86, 0.22);
+}
+
+.topbar,
+.section,
+.footer {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0 10px;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.section {
+  margin-top: 24px;
+}
+
+.hero,
+.ribbon,
+.benefit-card,
+.nutrition-panel,
+.nutrition-copy,
+.info-panel,
+.timeline,
+.tip-card,
+.quote-section,
+.faq-item,
+.footer {
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hero,
+.nutrition-layout,
+.split-section,
+.tips-grid,
+.benefit-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.hero {
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  padding: 38px;
+  background: linear-gradient(145deg, rgba(255, 252, 244, 0.88), rgba(253, 241, 197, 0.92));
+  border-radius: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  color: var(--leaf);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  max-width: 12ch;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.lead,
+.section-heading p,
+.benefit-card p,
+.nutrition-copy p,
+.info-panel p,
+.timeline-item p,
+.tip-card p,
+.faq-item p,
+.footer p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-actions,
+.hero-stats,
+.nutrition-panel,
+.tips-grid,
+.benefit-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-actions {
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.button:hover,
+.nutrient-tab:hover,
+.nav a:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--banana), var(--banana-deep));
+  color: #342204;
+  font-weight: 700;
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.hero-stats {
+  margin-top: 30px;
+}
+
+.stat-card {
+  flex: 1 1 170px;
+  min-height: 120px;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(91, 67, 26, 0.08);
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 2.2rem;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  margin-bottom: 10px;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.banana-orbit {
+  position: relative;
+  width: min(440px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at center, rgba(255, 241, 170, 0.9), rgba(247, 207, 63, 0.4) 42%, rgba(255, 255, 255, 0) 43%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.55), rgba(246, 223, 140, 0.65));
+  border: 1px solid rgba(91, 67, 26, 0.08);
+}
+
+.banana-core {
+  position: absolute;
+  inset: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 46% 54% 50% 50%;
+  background: linear-gradient(145deg, #ffe06e, #f3b51f);
+  box-shadow:
+    inset -18px -18px 36px rgba(148, 104, 13, 0.14),
+    0 18px 46px rgba(116, 87, 14, 0.18);
+}
+
+.banana-core::before {
+  content: "";
+  position: absolute;
+  inset: 18px 38px 18px 38px;
+  border-radius: 48% 52% 50% 50%;
+  background: linear-gradient(180deg, rgba(255, 245, 192, 0.84), rgba(255, 223, 112, 0.3));
+}
+
+.banana-core span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.orbit-card {
+  position: absolute;
+  width: 210px;
+  padding: 16px 18px;
+  border-radius: 24px;
+  background: rgba(255, 252, 245, 0.92);
+  border: 1px solid rgba(91, 67, 26, 0.08);
+}
+
+.orbit-card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.orbit-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.orbit-card-top {
+  top: 20px;
+  left: 20px;
+}
+
+.orbit-card-right {
+  right: -10px;
+  top: 120px;
+}
+
+.orbit-card-bottom {
+  left: 34px;
+  bottom: 20px;
+}
+
+.ribbon {
+  padding: 22px 28px;
+  background: linear-gradient(120deg, rgba(61, 123, 61, 0.92), rgba(111, 164, 58, 0.88));
+  color: #f9fff0;
+  border-radius: 26px;
+}
+
+.ribbon p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 22px;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.benefit-card,
+.tip-card,
+.nutrition-panel,
+.nutrition-copy,
+.info-panel,
+.timeline,
+.quote-section,
+.faq-item,
+.footer {
+  background: var(--surface);
+  border-radius: 28px;
+  backdrop-filter: blur(12px);
+}
+
+.benefit-card,
+.tip-card,
+.nutrition-copy,
+.info-panel,
+.timeline,
+.quote-section,
+.footer {
+  padding: 24px;
+}
+
+.nutrition-layout,
+.split-section {
+  grid-template-columns: 0.75fr 1.25fr;
+}
+
+.nutrition-panel {
+  padding: 18px;
+  align-content: flex-start;
+}
+
+.nutrient-tab {
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(91, 67, 26, 0.08);
+  background: rgba(255, 255, 255, 0.58);
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.nutrient-tab.is-active {
+  background: linear-gradient(135deg, rgba(247, 207, 63, 0.95), rgba(255, 238, 163, 0.94));
+  border-color: rgba(163, 124, 33, 0.32);
+}
+
+.nutrition-label {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-item {
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.timeline-item span {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.quote-section blockquote {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  line-height: 1.35;
+  max-width: 28ch;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 24px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 24px 24px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .nutrition-layout,
+  .split-section,
+  .benefit-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .orbit-card {
+    position: static;
+    width: auto;
+  }
+
+  .banana-orbit {
+    display: grid;
+    gap: 14px;
+    padding: 18px;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .banana-core {
+    position: relative;
+    inset: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .stat-card,
+  .benefit-card,
+  .tip-card,
+  .nutrition-copy,
+  .info-panel,
+  .timeline,
+  .quote-section,
+  .footer {
+    border-radius: 22px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
